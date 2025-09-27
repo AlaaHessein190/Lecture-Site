@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import lectures from "../data/lectures";
+
 function Questions() {
   const { id } = useParams();
-  const lecture = lectures[parseInt(id) - 1];
+  const [lecture, setLecture] = useState(null);
+
+  useEffect(() => {
+    import("../data/lectures").then((module) => {
+      const data = module.default;
+      setLecture(data[parseInt(id) - 1]);
+    });
+  }, [id]);
+
+  if (!lecture) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center px-4">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 text-center">
+          <p className="text-gray-600 mb-4">جارِ تحميل الأسئلة...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!lecture) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center px-4">
@@ -23,7 +41,10 @@ function Questions() {
       </div>
     );
   }
+
   return (
+    
+
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         

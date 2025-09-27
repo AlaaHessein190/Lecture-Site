@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import lectures from "../data/lectures";
 
 function Home() {
   const navigate = useNavigate();
+  const [lectures, setLectures] = useState([]);
   const [hoveredCard, setHoveredCard] = useState(null);
+
+  // ✅ تحميل البيانات بشكل Lazy بدل Import مباشر
+  useEffect(() => {
+    import("../data/lectures").then((module) => {
+      setLectures(module.default);
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/30 py-8 px-4 sm:px-6 lg:px-8">
@@ -164,7 +171,7 @@ function Home() {
       </div>
 
       {/* إضافة أنماط مخصصة للتمرير */}
-      <style jsx>{`
+      <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;
         }

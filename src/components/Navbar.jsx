@@ -1,4 +1,6 @@
 
+
+
 function Navbar() {
   return (
     <nav className="bg-gradient-to-r from-indigo-900 to-purple-800 shadow-xl sticky top-0 z-50">
