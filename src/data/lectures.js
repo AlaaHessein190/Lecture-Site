@@ -4,7 +4,7 @@ const lectures = [
     title: "Lecture First",
     content: [
       {
-        heading: "🔵 Introduction to React",
+        heading: " Introduction to React",
         points: [
           "What is React?",
           "Create React App (Vite أو CRA).",
@@ -36,7 +36,7 @@ const lectures = [
     title: "Lecture Second",
     content: [
       {
-        heading: "🔵 Components & Props",
+        heading: " Components & Props",
         points: [
           "Function Components.",
           "Props usage.",
@@ -44,7 +44,7 @@ const lectures = [
         ]
       },
       {
-        heading: "🔵 State Basics",
+        heading: " State Basics",
         points: [
           "useState Hook.",
           "Updating State.",
@@ -75,15 +75,15 @@ const lectures = [
     title: "Lecture Third",
     content: [
       {
-        heading: "🔵 Events in React",
+        heading: " Events in React",
         points: ["onClick, onChange, onSubmit.", "Passing functions as props."]
       },
       {
-        heading: "🔵 Lists & Keys",
+        heading: " Lists & Keys",
         points: ["Rendering lists with map.", "Unique keys."]
       },
       {
-        heading: "🔵 Conditional Rendering",
+        heading: " Conditional Rendering",
         points: ["if / else inside JSX.", "Ternary operator.", "Short-circuit &&."]
       }
     ],
@@ -111,5 +111,4 @@ const lectures = [
     ]
   }
 ];
-
 export default lectures;

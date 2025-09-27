@@ -1,11 +1,9 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import lectures from "../data/lectures";
-
 function Questions() {
   const { id } = useParams();
   const lecture = lectures[parseInt(id) - 1];
-
   if (!lecture) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex items-center justify-center px-4">
@@ -25,7 +23,6 @@ function Questions() {
       </div>
     );
   }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -46,7 +43,6 @@ function Questions() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Questions {lecture.title}</h1>
          
         </div>
-
         {/* شبكة الأسئلة */}
         <div className="space-y-6">
           {lecture.questions.map((item, index) => (
@@ -90,7 +86,6 @@ function Questions() {
             </div>
           ))}
         </div>
-
         {/* رسالة إذا لم توجد أسئلة */}
         {lecture.questions.length === 0 && (
           <div className="text-center py-12">
@@ -103,7 +98,6 @@ function Questions() {
             </div>
           </div>
         )}
-
         {/* تذييل الصفحة */}
         <div className="text-center mt-12 pt-6 border-t border-gray-200">
           <p className="text-gray-500">
@@ -114,5 +108,4 @@ function Questions() {
     </div>
   );
 }
-
 export default Questions;
