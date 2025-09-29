@@ -100,7 +100,7 @@ const lectures = [
       { q: "ما معنى short-circuit && في JSX؟", a: "لو الشرط true يعرض القيمة، لو false يتجاهل." },
       { q: "كود يعرض 'No Data' لو الـ array فاضي:", a: "{data.length === 0 && <p>No Data</p>}" },
       { q: "صح أم خطأ: ممكن Nested ternary يكون مقروء وسهل.", a: "خطأ، بيكون صعب القراءة." },
-      { q: "ما الفرق بين onClick في React و onclick في HTML؟", a: "React يكتب camelCase ويأخذ Function مش String." },
+      { q: "ما الفرق بين onClick في React و onClick في HTML؟", a: "React يكتب camelCase ويأخذ Function مش String." },
       { q: "كيف نمرر باراميتر مع Event؟", a: "<button onClick={() => handleClick(id)}>Click</button>" },
       { q: "في Conditional Rendering، أيهما أفضل؟", a: "يعتمد: ternary لو حالتين، && لو حالة واحدة." },
       { q: "ما هو الـ State المستخدم في Counter؟", a: "count." },
