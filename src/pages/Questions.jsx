@@ -91,11 +91,19 @@ function Questions() {
                           <h3 className="text-lg font-semibold text-gray-800">السؤال</h3>
                         </div>
                         {qLang ? (
-                          <SyntaxHighlighter language={qLang} style={vscDarkPlus}>
-                            {item.q}
-                          </SyntaxHighlighter>
+                          <div className="overflow-x-auto">
+                            <SyntaxHighlighter 
+                              language={qLang} 
+                              style={vscDarkPlus} 
+                              wrapLongLines
+                              customStyle={{ padding: '1rem', margin: 0 }}
+                              codeTagProps={{ style: { display: 'block', overflowX: 'auto' } }}
+                            >
+                              {item.q}
+                            </SyntaxHighlighter>
+                          </div>
                         ) : (
-                          <p className="text-gray-700 bg-blue-50 p-4 rounded-lg border-r-4 border-blue-500">
+                          <p className="text-gray-700 bg-blue-50 p-4 rounded-lg border-r-4 border-blue-500 whitespace-pre-wrap break-words">
                             {highlightKeywords(item.q)}
                           </p>
                         )}
@@ -108,11 +116,19 @@ function Questions() {
                           <h3 className="text-lg font-semibold text-gray-800">الإجابة</h3>
                         </div>
                         {aLang ? (
-                          <SyntaxHighlighter language={aLang} style={vscDarkPlus}>
-                            {item.a}
-                          </SyntaxHighlighter>
+                          <div className="overflow-x-auto">
+                            <SyntaxHighlighter 
+                              language={aLang} 
+                              style={vscDarkPlus} 
+                              wrapLongLines
+                              customStyle={{ padding: '1rem', margin: 0 }}
+                              codeTagProps={{ style: { display: 'block', overflowX: 'auto' } }}
+                            >
+                              {item.a}
+                            </SyntaxHighlighter>
+                          </div>
                         ) : (
-                          <p className="text-gray-700 bg-green-50 p-4 rounded-lg border-r-4 border-green-500">
+                          <p className="text-gray-700 bg-green-50 p-4 rounded-lg border-r-4 border-green-500 whitespace-pre-wrap break-words">
                             {highlightKeywords(item.a)}
                           </p>
                         )}
